@@ -2,61 +2,65 @@
 
 const apiKey = `c6465d4897feba2c6a295601d4f3afa34e88123f`
 
-const getURL = `http://www.giantbomb.com/api/game/3030-4725/?api_key=c6465d4897feba2c6a295601d4f3afa34e88123f&format=jsonp&field_list=name,image,medium_url`
+// const getURL = `http://www.giantbomb.com/api/game/3030-4725/?api_key=c6465d4897feba2c6a295601d4f3afa34e88123f&format=jsonp&field_list=name,image,medium_url`
 
-const testURL = `http://www.giantbomb.com/api/search/?api_key=c6465d4897feba2c6a295601d4f3afa34e88123f&format=json&query="metroid prime"&resources=game`
+const testURL = `http://www.giantbomb.com/api/search/?api_key=c6465d4897feba2c6a295601d4f3afa34e88123f&format=json&query="metroid prime"`
+//^ removed "&resources=game" from end of testURL. These are our filters
 
-const searchURL = `http://www.giantbomb.com/api/search`
+const searchURL = `http://www.giantbomb.com/api/search/`
 
-// function getData(searchTerm, callback){
-// 	const settings = {
-// 		url: searchURL,
-// 		data: {
-// 			api_key: apiKey,
-// 			query: `${searchTerm}`,
-// 			format: "jsonp",
-// 			resources: "game"
-// 		},
-// 		type: "GET",
-// 		dataType: "jsonp",
-// 		crossDomain: true,
-// 		jsonp: "json_callback",
-// 		success: callback
-// 	};
-// 	$.ajax(settings);
-// }
+function getData(searchTerm, callback){
+	const settings = {
+		url: searchURL,
+		data: {
+			api_key: apiKey,
+			query: `"${searchTerm}"`,
+			format: "jsonp",
+			// resources: "game"
+		},
+		type: "GET",
+		dataType: "jsonp",
+		crossDomain: true,
+		jsonp: "json_callback",
+		success: callback
+	};
+	$.ajax(settings);
+}
+
+// result.results[0].image.medium_url
 
 
 
-function Myfunction() {
 
-$.ajax({
+// function Myfunction() {
 
-url: getURL,
+// $.ajax({
 
-type: "GET",
+// url: testURL,
 
-dataType: "jsonp",
+// type: "GET",
 
-crossDomain:true,
+// dataType: "jsonp",
 
-jsonp:"json_callback",
+// crossDomain:true,
 
-success: function(result){
+// jsonp:"json_callback",
 
-console.log("Worked!");
+// success: function(result){
 
-},
+// console.log("Worked!");
 
-error: function(result){
+// },
 
-console.log("Error");
+// error: function(result){
 
-},
+// console.log("Error");
 
-});
+// },
 
-};
+// });
 
-Myfunction()
+// };
+
+// Myfunction()
 
