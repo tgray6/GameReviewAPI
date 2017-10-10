@@ -2,14 +2,14 @@
 
 const apiKey = `c6465d4897feba2c6a295601d4f3afa34e88123f`
 
-const testURL = `http://www.giantbomb.com/api/search/?api_key=c6465d4897feba2c6a295601d4f3afa34e88123f&format=json&query="metroid prime"&resources=game_rating`
+// const testURL = `http://www.giantbomb.com/api/search/?api_key=c6465d4897feba2c6a295601d4f3afa34e88123f&format=json&query="metroid prime"&resources=game_rating`
 //^ removed "&resources=game" from end of testURL. These are our filters
 
-const scoreURL = `http://www.giantbomb.com/api/reviews/?format=json&api_key=c6465d4897feba2c6a295601d4f3afa34e88123f`
+// const scoreURL = `http://www.giantbomb.com/api/reviews/?format=json&api_key=c6465d4897feba2c6a295601d4f3afa34e88123f`
 
-const searchURL = `http://www.giantbomb.com/api/search/`
+const searchURL = `https://www.giantbomb.com/api/search/`
 
-const reviewSCORE = `http://www.giantbomb.com/api/reviews/`
+// const reviewSCORE = `http://www.giantbomb.com/api/reviews/`
 
 
 function getData(searchTerm, callback){
@@ -85,12 +85,12 @@ function timeoutBackground(){
 }
 
 function timeinBackground(){
- $(".box").fadeOut(1000, function() {
+ $(".box").fadeOut(1300, function() {
     });
 }
 
 function timeinInitial(){
-$(`.box`).hide().fadeIn(1000);
+$(`.box`).hide().fadeIn(1500);
 }
 
 // function errorMessage(){
