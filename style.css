@@ -8,11 +8,36 @@
 body{
 	margin-left: auto;
 	margin-right: auto;
-	padding-top: 40px;
+	padding-top: 20px;
+}
+
+.backgroundImage{
+  height: 500px;
+  background-image: url("bomb2.png");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 h1{
 	text-align: center;
+  color: #ff3503;
+}
+
+#searchText{
+height: 50px;
+width: 300px;
+border: 1px solid black;
+font-size: 15px;
+font-family: 'Russo One', sans-serif;
+padding-left: 10px;
+}
+
+#submitButton{
+  height: 50px;
+  width: 150px;
+  font-family: 'Russo One', sans-serif;
+  border: 1px solid black;
+  font-size: 15px;
 }
 
 .mainheader{
@@ -22,18 +47,19 @@ h1{
 
 h3{
 	text-align: center;
+  color: red;
+  font-weight: bold;
 }
 
 .formDiv{
-	margin-top: 80px;
-	margin-bottom: 80px;
+	margin-top: 35px;
+	margin-bottom: 35px;
 	text-align: center;
 }
 
 .flex-container{
-  padding-top: 50px;
   width: 100%;
-  height: 350px;
+  /*height: 500px;*/
   margin-bottom: 90px;
   margin-left: auto;
   margin-right: auto;
@@ -42,15 +68,23 @@ h3{
   justify-content: center;
   align-items: center;
   text-align: center;
+  /*background-color: #ff3503;*/
 }
 
 .box{
-  width: 300px;
-  height: 300px;
+  width: 350px;
+  height: 615px;
+  max-height: 100%;
   margin-left: 20px;
   margin-right: 20px;
-  margin-top: 20px;
-  margin-bottom: 70px;
+  /*margin-top: 50px;*/
+  margin-bottom: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: #ff3503;
+  border-radius: 20px;
 }
 
 .gameTitle{
@@ -65,12 +99,29 @@ h3{
 img{
   max-width: 300px;
   max-height: 300px;
-  box-shadow: 0 0 70px 10px gray;
-  border-radius: 20px;
+  box-shadow: 0 0 70px 10px #dbd9d8;
+  border-radius: 10px;
   margin-bottom: 20px;
 }
 
 a{
-  color: red;
+  color: white;
   text-decoration: none;
+}
+
+.hide{
+  display: none;
+}
+
+.opacity{
+opacity: 0.5;
+}
+
+p{
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#errorMesssage{
+  color: red;
 }

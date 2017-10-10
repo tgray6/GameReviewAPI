@@ -11,23 +11,25 @@
 </head>
 <body>
 
-
-
 <main role="main">
 <header role="banner">
-	<h1 class="mainheader">Videogame Search</h1>
+	<h1 class="mainheader">GIANTBOMB GAMEFINDER</h1>
 </header>
 <section role="region">
 	<div class="formDiv">
 		<form action="#" class="gameSearch">
-    		<input required type="text" placeholder="Enter a game Title" id="searchText">
+    		<input required type="text" placeholder="Enter a Specific Videogame Title" id="searchText">
     		<button type="submit" id="submitButton">Find Game</button>
     	</form>
    </div>
+</div>
 </section>
 
 <section role="region">
-	<!-- <h3>Latest Reviews</h3> -->
+  <h3 id="errorMessage" class="hide">
+    <p>Sorry buddy, no results were found. Maybe try being more SPECIFIC or less vague, or stop typing random words to try and break me as I am easily broken.</p>
+  </h3>
+	<div class="backgroundImage"></div>
 	<div class="flex-container">
   </div>
 <!--   <div class="box">
@@ -36,7 +38,6 @@
   		</div>
 	</div> -->
 </section>
-<div id="images"></div>
 
 </main>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
