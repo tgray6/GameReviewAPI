@@ -1,10 +1,14 @@
 # GameReviewAPI
-Giant Bomb Game Reviews API-First Capstone
+GIANT BOMB GAME SEARCH
 
-This looks up data from giantbomb.com
+This website looks up data from giantbomb.com
 
-NOTE: It is set to https, but you may still not see results when you search, if so, look above in your searchbar(if your on chrome) and
-allow the site to "load unsafe scripts".
+![gamefinderhome](https://user-images.githubusercontent.com/28571966/31462501-f7d6fbd0-ae9a-11e7-8e98-2438c531b16c.png)
 
-BUG: Some games come back with NULL in the deck(description under the title). Need to make it where null is replaced with something. Search for "big one" for an example.
-BUG2: Games with long deck descriptions fall outside of the flexbox.
+Summary:
+Enter a specific game name and search for the data. If you get an error or do not see your specific game in the results, try to be more specific. If you cannot find your game, odds are it is not in the giantbomb database.
+![gamefindersearch](https://user-images.githubusercontent.com/28571966/31462503-fa2f369a-ae9a-11e7-983c-c075034a2ee1.png)
+
+
+Technology used: HTML/CSS/JavaScript/jQuery
+
