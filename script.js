@@ -42,6 +42,10 @@ function renderGame(result){
 		<div class="siteLink"> <a href="${result.site_detail_url}"target="_blank">Check It Out</a> </div>
   		</div>
 	`
+	// if ($(result.deck).isEmpty()){
+ //     // $(`.deckER`).html("gatdamn");
+ //     $(result.deck)="Whatever";
+ //     }
 }
 
 
@@ -92,6 +96,7 @@ function timeinBackground(){
 function timeinInitial(){
 $(`.box`).hide().fadeIn(1500);
 }
+
 
 // function errorMessage(){
 // 	$(`#errorMessage`).html(`<p>Sorry buddy, no results were found. Maybe try being more SPECIFIC ^ or less vague, or stop typing random letters and numbers.</p>`);
