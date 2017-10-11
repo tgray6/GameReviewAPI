@@ -9,7 +9,7 @@ const apiKey = `c6465d4897feba2c6a295601d4f3afa34e88123f`
 
 const searchURL = `https://www.giantbomb.com/api/search/`
 
-// const reviewSCORE = `http://www.giantbomb.com/api/reviews/`
+// const reviewURL = `http://www.giantbomb.com/api/reviews/`
 
 
 function getData(searchTerm, callback){
