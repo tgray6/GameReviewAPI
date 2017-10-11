@@ -2,16 +2,10 @@
 
 const apiKey = `c6465d4897feba2c6a295601d4f3afa34e88123f`
 
-// const testURL = `http://www.giantbomb.com/api/search/?api_key=c6465d4897feba2c6a295601d4f3afa34e88123f&format=json&query="metroid prime"&resources=game_rating`
-//^ removed "&resources=game" from end of testURL. These are our filters
-
-// const scoreURL = `http://www.giantbomb.com/api/reviews/?format=json&api_key=c6465d4897feba2c6a295601d4f3afa34e88123f`
-
 const searchURL = `https://www.giantbomb.com/api/search/`
 
-// const reviewURL = `http://www.giantbomb.com/api/reviews/`
 
-
+//the request to the giantbomb api, searchTerm and callback is inside watchSubmit()
 function getData(searchTerm, callback){
 	const settings = {
 		url: searchURL,
@@ -20,7 +14,6 @@ function getData(searchTerm, callback){
 			query: `"${searchTerm}"`,
 			format: "jsonp",
 			resources: "game",
-			// field_list: "api_detail_url",
 			limit: 4
 		},
 		type: "GET",
@@ -33,6 +26,9 @@ function getData(searchTerm, callback){
 }
 
 
+//this renders our "postman" data. we use the result parameter (you can name it anything)
+//we use a parameter to fill as the object in the "postman" data, which is "results" as seen
+//in the displayGame(data). We then MAP all of this content in displayGame(data).
 function renderGame(result){
 	return `
 	<div class="box"> 
@@ -42,13 +38,12 @@ function renderGame(result){
 		<div class="siteLink"> <a href="${result.site_detail_url}"target="_blank">Check It Out</a> </div>
   		</div>
 	`
-	// if ($(result.deck).isEmpty()){
- //     // $(`.deckER`).html("gatdamn");
- //     $(result.deck)="Whatever";
- //     }
 }
 
 
+//this is essentially taking our renderGame content and mapping the items to a new array
+//we use the data parameter, then run data.RESULTS(the giantbomb array of objects).map(renderGame)
+//then, appends the searchResults const to the flex-container.
 function displayGame(data){
 	const searchResults = data.results.map(renderGame);
 
@@ -62,26 +57,25 @@ function displayGame(data){
 }
 };
 
-
+//This runs our getData function, finds the search term based on the #searchText value,
+//then runs our displayGame as the callback, which maps out our RESULTS giantbomb object, and
+//appends the data.
 function watchSubmit() {
   $('form').submit(function(event) {
-  	// $(`#errorMessage`).addClass("hidden");
   	timeoutBackground();
-  	// $(`.backgroundImage`).addClass("opacity");
     event.preventDefault();
     let queryTarget = $(event.currentTarget).find('#searchText');
     let query = queryTarget.val();
-    //console.log('query', query);
     queryTarget.val("");
     getData(query, displayGame);
-    // getScoreData(query,displayGame);
- // showErr(error);
     timeinBackground();
   });
 }
 $(watchSubmit);
 
 
+
+//Below functions are all fading animations.
 function timeoutBackground(){
  $(".backgroundImage").fadeOut(1000, function() {
         $(this).remove();
@@ -98,55 +92,6 @@ $(`.box`).hide().fadeIn(1500);
 }
 
 
-// function errorMessage(){
-// 	$(`#errorMessage`).html(`<p>Sorry buddy, no results were found. Maybe try being more SPECIFIC ^ or less vague, or stop typing random letters and numbers.</p>`);
-// }
-
-// function showErr(error){
-// 	const outputElem = $(`.deckER`);
-// 	const {status}=error;
-
-// 	let errMsg;
-
-// 	if(status==="null"){
-// 		errMsg = "No info"
-// 	}
-
-// 	const errHTML =
-// 		(`<div> <p class="deckER">${errMsg}<p> </div>`)
-
-// 	outputElem.html(errHTML);
-// }
-
-
-// function errorReport(){
-// 	let empt = $(`.flex-container`).value;
-// 	if (empt ==""){
-// 		alert("please be more specific!")
-// 	}
-// }
-
-
-// function getScoreData(searchTerm, callback){
-
-// 	const scoresettings = {
-// 		url: reviewSCORE,
-// 			data: {
-// 			api_key: apiKey,
-// 			query: `"${searchTerm}"`,
-// 			format: "jsonp",
-// 			resources: "reviews",
-// 			// field_list: "name,image,original_game_rating",
-// 			limit: 4
-// 		},
-// 		type: "GET",
-// 		dataType: "jsonp",
-// 		crossDomain: true,
-// 		jsonp: "json_callback",
-// 		success: callback
-// 	}
-// 	$.ajax(scoresettings)
-// }
 
 
 
@@ -154,6 +99,10 @@ $(`.box`).hide().fadeIn(1500);
 
 
 
+
+
+
+//INITIAL API GET REQUEST TEST
 // function Myfunction() {
 
 // $.ajax({
